@@ -1262,4 +1262,33 @@ document.addEventListener("DOMContentLoaded", () => {
       URL.revokeObjectURL(url);
     }, 100);
   }
+
+  // ---------------------------------------------------------------------------
+  // 13. Dynamic Scroll Reveal Animation Engine
+  // ---------------------------------------------------------------------------
+  function initScrollReveal() {
+    const elements = document.querySelectorAll(".scroll-reveal");
+    if (!elements.length) return;
+
+    if ("IntersectionObserver" in window) {
+      const observer = new IntersectionObserver(
+        (entries, obs) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("is-revealed");
+              obs.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.12, rootMargin: "0px 0px -40px 0px" }
+      );
+
+      elements.forEach((el) => observer.observe(el));
+    } else {
+      // Fallback for older browsers
+      elements.forEach((el) => el.classList.add("is-revealed"));
+    }
+  }
+
+  initScrollReveal();
 });

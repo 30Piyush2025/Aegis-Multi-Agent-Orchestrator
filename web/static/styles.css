@@ -548,7 +548,7 @@ body {
   font-size: 1.45rem;
   font-weight: 700;
   letter-spacing: -0.02em;
-  margin-bottom: 0.8rem;
+  margin-bottom: 1rem;
 }
 
 .story-card-desc {
@@ -556,6 +556,44 @@ body {
   font-size: 0.96rem;
   line-height: 1.7;
 }
+
+.story-bullet {
+  font-size: 0.98rem;
+  line-height: 1.6;
+  color: var(--text-main);
+  margin-bottom: 0.8rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.45rem;
+}
+
+.story-bullet:last-child {
+  margin-bottom: 0;
+}
+
+.highlight-badge {
+  font-weight: 700;
+  color: var(--accent);
+  display: inline;
+}
+
+/* Scroll Reveal Animation System */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(32px) scale(0.98);
+  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.scroll-reveal.is-revealed {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.delay-1 { transition-delay: 0.1s; }
+.delay-2 { transition-delay: 0.2s; }
+.delay-3 { transition-delay: 0.3s; }
+.delay-4 { transition-delay: 0.4s; }
 
 /* ==========================================================================
    Company Studios Directory Matrix
