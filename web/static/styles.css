@@ -1,11 +1,11 @@
 /* ==========================================================================
    Aegis Enterprise Technologies — Corporate Multi-Domain Studio
-   Typography: Outfit + Lexend (Headings & Expansive Sans) + Instrument Serif (Editorial) + Plus Jakarta Sans (UI) + Noto Sans Devanagari (Hindi)
+   Typography: Syne (Headings) + Instrument Serif (Editorial) + Plus Jakarta Sans (UI)
    Palette: Warm Parchment & Velvet Obsidian (Human-crafted luxury)
-   Motto: "तारों से नहीं, मोहब्बत से होती है।"
+   Motto: "Crafted with care, not wires."
    ========================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Lexend:wght@300;400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Syne:wght@600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
 
 :root {
   /* Warm Ivory / Luxury Parchment Palette */
@@ -30,11 +30,10 @@
   --forest: #2B5844;            /* Pine Forest */
   --forest-soft: rgba(43, 88, 68, 0.09);
   
-  /* Spacious, Breathable Typography Hierarchy (Zero horizontal squishing) */
-  --font-display: 'Outfit', 'Lexend', system-ui, -apple-system, sans-serif;
+  /* Stylish Typography Hierarchy */
+  --font-display: 'Syne', sans-serif;
   --font-serif: 'Instrument Serif', Georgia, serif;
-  --font-sans: 'Plus Jakarta Sans', 'Lexend', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-devanagari: 'Noto Sans Devanagari', 'Lohit Devanagari', 'Mangal', 'Nirmala UI', sans-serif;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
   
   --radius-sm: 8px;
@@ -91,40 +90,11 @@ body {
   background-color: var(--bg);
   color: var(--text-main);
   font-family: var(--font-sans);
-  font-size: 1.02rem;
-  letter-spacing: 0.02em;
-  line-height: 1.75;
+  line-height: 1.6;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-/* ==========================================================================
-   Hindi & Devanagari Clipping Protection (Zero Matra Cuts)
-   ========================================================================== */
-
-.hindi-text, [lang="hi"], .brand-motto, .hero-quote-badge, .footer-quote, .story-card-desc, .story-card-title, .hindi-quote {
-  font-family: var(--font-devanagari) !important;
-  line-height: 2.05 !important;
-  letter-spacing: normal !important;
-  font-style: normal !important;
-  overflow: visible !important;
-  padding-top: 3px !important;
-  padding-bottom: 3px !important;
-  word-break: normal;
-  font-feature-settings: "kern" 0, "liga" 1, "dlig" 1 !important;
-}
-
-.story-card-desc em, .hindi-text em, em.hindi-text, .brand-motto em, .hindi-quote {
-  font-style: normal !important;
-  font-weight: 700 !important;
-  color: var(--accent);
-  font-family: var(--font-devanagari) !important;
-  line-height: 2.05 !important;
-  display: inline-block;
-  overflow: visible !important;
-  padding: 2px 0 !important;
 }
 
 /* ==========================================================================
@@ -139,7 +109,7 @@ body {
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--border-subtle);
-  padding: 0.95rem 2.2rem;
+  padding: 0.85rem 2rem;
   transition: var(--transition);
 }
 
@@ -159,15 +129,15 @@ body {
 .brand-section {
   display: flex;
   align-items: center;
-  gap: 1.1rem;
+  gap: 1rem;
   cursor: pointer;
   text-decoration: none;
   color: inherit;
 }
 
 .brand-emblem {
-  width: 44px;
-  height: 44px;
+  width: 42px;
+  height: 42px;
   border-radius: var(--radius-sm);
   background: var(--text-main);
   color: var(--bg);
@@ -175,10 +145,11 @@ body {
   align-items: center;
   justify-content: center;
   font-family: var(--font-display);
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   font-weight: 800;
   box-shadow: var(--shadow-sm);
   transition: var(--transition);
+  letter-spacing: -0.05em;
 }
 
 .brand-section:hover .brand-emblem {
@@ -189,42 +160,37 @@ body {
 
 .brand-text h1 {
   font-family: var(--font-display);
-  font-size: 1.38rem;
-  font-weight: 700;
-  letter-spacing: 0.035em;
-  line-height: 1.25;
+  font-size: 1.35rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
 }
 
 .brand-motto {
-  font-size: 0.95rem;
-  color: var(--accent);
-  font-style: normal !important;
-  font-family: var(--font-devanagari) !important;
-  line-height: 1.95 !important;
-  letter-spacing: normal !important;
-  display: block;
-  overflow: visible !important;
-  padding-top: 2px;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-style: italic;
+  font-family: var(--font-serif);
 }
 
 /* Telemetry Status Pill */
 .corporate-status-pill {
   display: inline-flex;
   align-items: center;
-  gap: 0.55rem;
-  padding: 0.4rem 0.95rem;
+  gap: 0.5rem;
+  padding: 0.35rem 0.85rem;
   border-radius: var(--radius-full);
   background: var(--bg-subtle);
   border: 1px solid var(--border);
   font-family: var(--font-mono);
-  font-size: 0.78rem;
+  font-size: 0.76rem;
   font-weight: 600;
   color: var(--forest);
 }
 
 .status-dot {
-  width: 8px;
-  height: 8px;
+  width: 7px;
+  height: 7px;
   border-radius: 50%;
   background: var(--forest);
   box-shadow: 0 0 8px var(--forest);
@@ -240,17 +206,17 @@ body {
 .titlebar-nav {
   display: flex;
   align-items: center;
-  gap: 0.9rem;
+  gap: 0.8rem;
 }
 
 .titlebar-select {
   background: var(--surface);
   border: 1px solid var(--border);
   color: var(--text-main);
-  padding: 0.6rem 1.3rem;
+  padding: 0.55rem 1.2rem;
   border-radius: var(--radius-full);
   font-family: var(--font-sans);
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   font-weight: 600;
   cursor: pointer;
   outline: none;
@@ -266,10 +232,10 @@ body {
   background: var(--surface);
   border: 1px solid var(--border);
   color: var(--text-muted);
-  padding: 0.55rem 1.1rem;
+  padding: 0.52rem 1rem;
   border-radius: var(--radius-full);
   cursor: pointer;
-  font-size: 0.86rem;
+  font-size: 0.84rem;
   font-weight: 600;
   display: flex;
   align-items: center;
@@ -289,7 +255,7 @@ body {
 .main-content {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 2.8rem 2.2rem 5rem;
+  padding: 2.5rem 2rem 5rem;
   width: 100%;
   flex: 1;
 }
@@ -312,8 +278,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 2.4rem;
-  padding-bottom: 1.5rem;
+  margin-bottom: 2.2rem;
+  padding-bottom: 1.4rem;
   border-bottom: 1px solid var(--border-subtle);
   flex-wrap: wrap;
   gap: 1.2rem;
@@ -321,18 +287,16 @@ body {
 
 .page-title-group h2 {
   font-family: var(--font-display);
-  font-size: 2.35rem;
-  font-weight: 700;
-  letter-spacing: 0.03em;
-  line-height: 1.3;
-  margin-bottom: 0.4rem;
+  font-size: 2.3rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  margin-bottom: 0.3rem;
 }
 
 .page-title-group p {
   color: var(--text-muted);
-  font-size: 1.02rem;
-  line-height: 1.65;
-  max-width: 760px;
+  font-size: 1rem;
+  max-width: 720px;
 }
 
 .page-controls {
@@ -345,10 +309,10 @@ body {
   background: var(--surface);
   border: 1px solid var(--border);
   color: var(--text-main);
-  padding: 0.7rem 1.5rem;
+  padding: 0.65rem 1.4rem;
   border-radius: var(--radius-full);
   font-family: var(--font-sans);
-  font-size: 0.92rem;
+  font-size: 0.9rem;
   font-weight: 600;
   cursor: pointer;
   display: inline-flex;
@@ -372,8 +336,8 @@ body {
 .front-hero {
   position: relative;
   text-align: center;
-  padding: 5rem 2.2rem 5.8rem;
-  margin-bottom: 3.8rem;
+  padding: 4.8rem 2rem 5.5rem;
+  margin-bottom: 3.5rem;
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius-xl);
@@ -388,49 +352,39 @@ body {
   width: 100%;
   height: 100%;
   pointer-events: auto;
-  opacity: 0.82;
+  opacity: 0.8;
   z-index: 1;
 }
 
 .front-hero-content {
   position: relative;
   z-index: 2;
-  max-width: 960px;
+  max-width: 900px;
   margin: 0 auto;
 }
 
 .hero-quote-badge {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
-  gap: 0.65rem;
-  padding: 0.65rem 1.8rem;
+  gap: 0.6rem;
+  padding: 0.45rem 1.4rem;
   border-radius: var(--radius-full);
   background: var(--accent-soft);
   color: var(--accent);
-  font-family: var(--font-devanagari) !important;
-  font-size: 1.18rem;
-  font-weight: 600;
-  line-height: 2.05 !important;
-  letter-spacing: normal !important;
-  overflow: visible !important;
-  margin-bottom: 1.8rem;
-  border: 1px solid rgba(196, 85, 50, 0.22);
-}
-
-.hero-quote-badge span {
-  line-height: 2.05 !important;
-  padding: 2px 0;
-  overflow: visible !important;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.15rem;
+  margin-bottom: 1.6rem;
+  border: 1px solid rgba(196, 85, 50, 0.2);
 }
 
 .front-hero-title {
   font-family: var(--font-display);
-  font-size: 3.5rem;
-  font-weight: 700;
-  letter-spacing: 0.03em;
-  line-height: 1.25;
-  margin-bottom: 1.5rem;
+  font-size: 3.6rem;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1.15;
+  margin-bottom: 1.4rem;
 }
 
 .front-hero-title em {
@@ -438,37 +392,36 @@ body {
   font-style: italic;
   font-weight: 400;
   color: var(--accent);
-  padding: 0 0.15em;
 }
 
 .front-hero-desc {
-  font-size: 1.22rem;
+  font-size: 1.2rem;
   color: var(--text-muted);
-  line-height: 1.8;
-  max-width: 800px;
-  margin: 0 auto 2.5rem;
+  line-height: 1.75;
+  max-width: 760px;
+  margin: 0 auto 2.4rem;
 }
 
 .front-hero-actions {
   display: flex;
   justify-content: center;
-  gap: 1.1rem;
+  gap: 1rem;
   flex-wrap: wrap;
-  margin-bottom: 3rem;
+  margin-bottom: 2.8rem;
 }
 
 /* Live Company Metric Tickers */
 .metric-ticker-strip {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-  gap: 1.3rem;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.2rem;
   border-top: 1px solid var(--border-subtle);
-  padding-top: 2.4rem;
+  padding-top: 2.2rem;
   text-align: left;
 }
 
 .metric-card {
-  padding: 1rem 1.2rem;
+  padding: 0.8rem 1rem;
   background: var(--bg-subtle);
   border-radius: var(--radius-md);
   border: 1px solid var(--border-subtle);
@@ -476,91 +429,89 @@ body {
 
 .metric-number {
   font-family: var(--font-display);
-  font-size: 1.85rem;
+  font-size: 1.75rem;
   font-weight: 800;
   color: var(--text-main);
-  letter-spacing: 0.01em;
+  letter-spacing: -0.02em;
 }
 
 .metric-label {
-  font-size: 0.86rem;
+  font-size: 0.84rem;
   color: var(--text-muted);
-  margin-top: 0.2rem;
+  margin-top: 0.15rem;
 }
 
 /* Trusted By / Enterprise Client Proof */
 .company-client-strip {
-  margin-bottom: 3.8rem;
+  margin-bottom: 3.5rem;
   text-align: center;
 }
 
 .company-client-label {
-  font-size: 0.82rem;
+  font-size: 0.78rem;
   text-transform: uppercase;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.12em;
   color: var(--text-subtle);
   font-weight: 700;
-  margin-bottom: 1.4rem;
+  margin-bottom: 1.2rem;
 }
 
 .client-badges-row {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 2.8rem;
+  gap: 2.5rem;
   flex-wrap: wrap;
-  opacity: 0.8;
+  opacity: 0.75;
 }
 
 .client-badge-item {
   font-family: var(--font-display);
-  font-size: 1.18rem;
+  font-size: 1.15rem;
   font-weight: 700;
-  letter-spacing: 0.02em;
+  letter-spacing: -0.02em;
   color: var(--text-muted);
 }
 
 /* ==========================================================================
-   Company Architecture & Forensic Transparency ("क्या हो रहा है, क्या नहीं")
+   Company Architecture & Forensic Transparency ("Forensic Transparency & Architectural Breakdown")
    ========================================================================== */
 
 .section-headline {
   font-family: var(--font-display);
-  font-size: 2.45rem;
-  font-weight: 700;
-  letter-spacing: 0.03em;
+  font-size: 2.4rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
   text-align: center;
-  margin-bottom: 0.7rem;
-  line-height: 1.3;
+  margin-bottom: 0.6rem;
 }
 
 .section-sub {
   color: var(--text-muted);
   text-align: center;
-  margin-bottom: 3rem;
-  font-size: 1.1rem;
-  max-width: 720px;
+  margin-bottom: 2.8rem;
+  font-size: 1.08rem;
+  max-width: 680px;
   margin-left: auto;
   margin-right: auto;
-  line-height: 1.75;
 }
 
 .story-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 2rem;
-  margin-bottom: 4.8rem;
+  grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+  gap: 1.8rem;
+  margin-bottom: 4.5rem;
 }
 
 .story-card {
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
-  padding: 2.4rem;
+  padding: 2.2rem;
   box-shadow: var(--shadow-sm);
   transition: var(--transition);
   position: relative;
-  overflow: visible;
+  overflow: hidden;
 }
 
 .story-card:hover {
@@ -571,8 +522,8 @@ body {
 
 .story-card-number {
   position: absolute;
-  top: 1.6rem;
-  right: 1.8rem;
+  top: 1.4rem;
+  right: 1.6rem;
   font-family: var(--font-display);
   font-size: 2.2rem;
   font-weight: 800;
@@ -581,36 +532,29 @@ body {
 }
 
 .story-card-icon {
-  width: 56px;
-  height: 56px;
+  width: 52px;
+  height: 52px;
   border-radius: var(--radius-sm);
   background: var(--bg-subtle);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.7rem;
-  margin-bottom: 1.5rem;
+  font-size: 1.6rem;
+  margin-bottom: 1.4rem;
 }
 
 .story-card-title {
-  font-family: var(--font-devanagari) !important;
-  font-size: 1.48rem;
+  font-family: var(--font-display);
+  font-size: 1.45rem;
   font-weight: 700;
-  margin-bottom: 0.9rem;
-  line-height: 2.05 !important;
-  letter-spacing: normal !important;
-  overflow: visible !important;
-  padding-top: 3px;
-  padding-bottom: 3px;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.8rem;
 }
 
 .story-card-desc {
-  font-family: var(--font-devanagari) !important;
   color: var(--text-muted);
-  font-size: 1.02rem;
-  line-height: 2.05 !important;
-  letter-spacing: normal !important;
-  overflow: visible !important;
+  font-size: 0.96rem;
+  line-height: 1.7;
 }
 
 /* ==========================================================================
@@ -619,16 +563,16 @@ body {
 
 .studio-launch-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(390px, 1fr));
-  gap: 2rem;
-  margin-bottom: 4.8rem;
+  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+  gap: 1.8rem;
+  margin-bottom: 4.5rem;
 }
 
 .studio-card {
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
-  padding: 2.4rem;
+  padding: 2.2rem;
   cursor: pointer;
   transition: var(--transition);
   display: flex;
@@ -646,30 +590,30 @@ body {
 .studio-card-head {
   display: flex;
   align-items: center;
-  gap: 1.2rem;
-  margin-bottom: 1.1rem;
+  gap: 1.1rem;
+  margin-bottom: 1rem;
 }
 
 .studio-card-icon {
-  font-size: 2.1rem;
+  font-size: 2rem;
 }
 
 .studio-card-head h3 {
   font-family: var(--font-display);
-  font-size: 1.55rem;
+  font-size: 1.5rem;
   font-weight: 700;
-  letter-spacing: 0.03em;
+  letter-spacing: -0.02em;
 }
 
 .studio-card p {
   color: var(--text-muted);
-  font-size: 1rem;
-  line-height: 1.7;
-  margin-bottom: 1.8rem;
+  font-size: 0.98rem;
+  line-height: 1.65;
+  margin-bottom: 1.6rem;
 }
 
 .studio-open-link {
-  font-size: 0.94rem;
+  font-size: 0.92rem;
   font-weight: 700;
   color: var(--accent);
   display: flex;
@@ -801,7 +745,7 @@ body {
 .lining-viewport-container {
   position: relative;
   width: 100%;
-  height: 440px;
+  height: 420px;
   background: var(--bg-subtle);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
@@ -818,22 +762,22 @@ body {
 
 .lining-overlay-controls {
   position: absolute;
-  bottom: 18px;
-  left: 18px;
-  right: 18px;
+  bottom: 16px;
+  left: 16px;
+  right: 16px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: rgba(255, 255, 255, 0.92);
-  backdrop-filter: blur(12px);
-  padding: 0.85rem 1.3rem;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  padding: 0.75rem 1.2rem;
   border-radius: var(--radius-md);
   border: 1px solid var(--border);
-  font-size: 0.88rem;
+  font-size: 0.86rem;
 }
 
 [data-theme="dark"] .lining-overlay-controls {
-  background: rgba(30, 29, 27, 0.94);
+  background: rgba(30, 29, 27, 0.92);
 }
 
 /* ==========================================================================
@@ -844,19 +788,17 @@ body {
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius-xl);
-  padding: 2.5rem;
+  padding: 2.4rem;
   box-shadow: var(--shadow-md);
-  margin-bottom: 2.2rem;
+  margin-bottom: 2rem;
 }
 
 .input-label {
   display: block;
-  font-size: 0.94rem;
+  font-size: 0.92rem;
   font-weight: 700;
-  letter-spacing: 0.025em;
-  margin-bottom: 0.6rem;
+  margin-bottom: 0.55rem;
   color: var(--text-main);
-  line-height: 1.5;
 }
 
 .text-area {
@@ -864,23 +806,14 @@ body {
   background: var(--bg-subtle);
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
-  padding: 1.15rem 1.3rem;
-  font-family: var(--font-sans), var(--font-devanagari);
-  font-size: 1.02rem;
-  letter-spacing: 0.02em;
+  padding: 1.1rem 1.25rem;
+  font-family: var(--font-sans);
+  font-size: 0.98rem;
   color: var(--text-main);
   resize: vertical;
   transition: var(--transition);
   outline: none;
   min-height: 120px;
-  line-height: 1.85;
-}
-
-.text-area::placeholder, input::placeholder {
-  font-family: var(--font-devanagari), var(--font-sans);
-  line-height: 1.85;
-  color: var(--text-subtle);
-  letter-spacing: normal;
 }
 
 .text-area:focus {
@@ -893,11 +826,11 @@ body {
   border: 2px dashed var(--border);
   background: var(--bg-subtle);
   border-radius: var(--radius-lg);
-  padding: 2.4rem 1.6rem;
+  padding: 2.2rem 1.5rem;
   text-align: center;
   cursor: pointer;
   transition: var(--transition);
-  margin-bottom: 1.6rem;
+  margin-bottom: 1.5rem;
 }
 
 .file-dropzone:hover, .file-dropzone.dragover {
@@ -906,26 +839,25 @@ body {
 }
 
 .file-dropzone-icon {
-  font-size: 2.6rem;
+  font-size: 2.4rem;
   color: var(--text-muted);
-  margin-bottom: 0.6rem;
+  margin-bottom: 0.5rem;
 }
 
 .btn-primary {
   background: var(--text-main);
   color: var(--bg);
   border: none;
-  padding: 0.9rem 1.9rem;
+  padding: 0.85rem 1.8rem;
   border-radius: var(--radius-full);
-  font-family: var(--font-display);
-  font-size: 1rem;
+  font-family: var(--font-sans);
+  font-size: 0.98rem;
   font-weight: 700;
-  letter-spacing: 0.03em;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.65rem;
+  gap: 0.6rem;
   transition: var(--transition);
   box-shadow: var(--shadow-sm);
 }
@@ -941,16 +873,15 @@ body {
   background: var(--surface);
   color: var(--text-main);
   border: 1px solid var(--border);
-  padding: 0.8rem 1.5rem;
+  padding: 0.75rem 1.45rem;
   border-radius: var(--radius-full);
-  font-family: var(--font-display);
-  font-size: 0.94rem;
-  font-weight: 600;
-  letter-spacing: 0.025em;
+  font-family: var(--font-sans);
+  font-size: 0.92rem;
+  font-weight: 700;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
-  gap: 0.55rem;
+  gap: 0.5rem;
   transition: var(--transition);
 }
 
@@ -977,16 +908,16 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 0.8rem;
+  margin-bottom: 0.75rem;
 }
 
 .calm-status-text {
-  font-size: 1rem;
+  font-size: 0.98rem;
   font-weight: 700;
   color: var(--text-main);
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: 0.7rem;
 }
 
 .calm-pulse-dot {
@@ -1026,29 +957,29 @@ body {
 
 .output-panel {
   display: none;
-  margin-top: 2.4rem;
+  margin-top: 2.2rem;
 }
 
 .output-header-bar {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.4rem;
   flex-wrap: wrap;
-  gap: 1.1rem;
+  gap: 1rem;
 }
 
 .output-title-group h3 {
   font-family: var(--font-display);
-  font-size: 1.65rem;
+  font-size: 1.6rem;
   font-weight: 800;
-  letter-spacing: 0.01em;
+  letter-spacing: -0.02em;
 }
 
 .output-actions-group {
   display: flex;
   align-items: center;
-  gap: 0.8rem;
+  gap: 0.75rem;
 }
 
 /* Table Design */
@@ -1065,12 +996,12 @@ body {
   width: 100%;
   border-collapse: collapse;
   text-align: left;
-  font-size: 0.92rem;
+  font-size: 0.9rem;
 }
 
 .data-table th {
   background: var(--bg-subtle);
-  padding: 0.9rem 1.2rem;
+  padding: 0.85rem 1.15rem;
   font-weight: 700;
   font-family: var(--font-sans);
   color: var(--text-main);
@@ -1082,7 +1013,7 @@ body {
 }
 
 .data-table td {
-  padding: 0.8rem 1.2rem;
+  padding: 0.75rem 1.15rem;
   border-bottom: 1px solid var(--border-subtle);
   color: var(--text-main);
   white-space: nowrap;
@@ -1099,28 +1030,28 @@ body {
   background: var(--bg-subtle);
   border-left: 4px solid var(--accent);
   border-radius: 0 var(--radius-md) var(--radius-md) 0;
-  padding: 1.3rem 1.6rem;
-  margin-bottom: 1.1rem;
+  padding: 1.2rem 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .scene-time-pill {
   font-family: var(--font-mono);
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   font-weight: 700;
   color: var(--accent);
   background: var(--accent-soft);
-  padding: 3px 10px;
+  padding: 3px 9px;
   border-radius: var(--radius-sm);
   display: inline-block;
-  margin-bottom: 0.55rem;
+  margin-bottom: 0.5rem;
 }
 
 /* Color Swatches Grid */
 .palette-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(145px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
   gap: 1.1rem;
-  margin-top: 1.3rem;
+  margin-top: 1.2rem;
 }
 
 .swatch-card {
@@ -1138,42 +1069,42 @@ body {
 }
 
 .swatch-color {
-  height: 80px;
+  height: 75px;
   width: 100%;
 }
 
 .swatch-info {
-  padding: 0.75rem 0.85rem;
+  padding: 0.7rem 0.8rem;
 }
 
 .swatch-name {
-  font-size: 0.88rem;
+  font-size: 0.86rem;
   font-weight: 700;
 }
 
 .swatch-hex {
   font-family: var(--font-mono);
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   color: var(--text-muted);
 }
 
 /* Technical Ledger */
 .technical-ledger-details {
-  margin-top: 3rem;
+  margin-top: 2.8rem;
   border-top: 1px solid var(--border-subtle);
-  padding-top: 1.5rem;
+  padding-top: 1.4rem;
 }
 
 .technical-ledger-summary {
   cursor: pointer;
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   color: var(--text-subtle);
   font-weight: 600;
   outline: none;
   user-select: none;
   display: inline-flex;
   align-items: center;
-  gap: 0.55rem;
+  gap: 0.5rem;
 }
 
 .technical-ledger-summary:hover {
@@ -1184,12 +1115,12 @@ body {
   background: var(--bg-subtle);
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
-  padding: 1.3rem 1.5rem;
-  margin-top: 1rem;
+  padding: 1.2rem 1.4rem;
+  margin-top: 0.9rem;
   font-family: var(--font-mono);
-  font-size: 0.86rem;
+  font-size: 0.84rem;
   color: var(--text-muted);
-  max-height: 290px;
+  max-height: 280px;
   overflow-y: auto;
 }
 
@@ -1199,9 +1130,9 @@ body {
 
 .atelier-footer {
   border-top: 1px solid var(--border-subtle);
-  padding: 3.8rem 2.2rem 2.8rem;
+  padding: 3.5rem 2rem 2.5rem;
   color: var(--text-muted);
-  font-size: 0.94rem;
+  font-size: 0.92rem;
   background: var(--surface);
 }
 
@@ -1215,43 +1146,39 @@ body {
   justify-content: space-between;
   align-items: flex-start;
   flex-wrap: wrap;
-  gap: 2.2rem;
-  margin-bottom: 2.8rem;
+  gap: 2rem;
+  margin-bottom: 2.5rem;
 }
 
 .footer-brand h4 {
   font-family: var(--font-display);
-  font-size: 1.45rem;
-  font-weight: 700;
+  font-size: 1.4rem;
+  font-weight: 800;
   color: var(--text-main);
-  letter-spacing: 0.03em;
+  letter-spacing: -0.02em;
 }
 
 .footer-quote {
-  font-family: var(--font-devanagari) !important;
-  font-size: 1.28rem;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.25rem;
   color: var(--text-main);
-  margin-top: 0.6rem;
-  line-height: 2.05 !important;
-  letter-spacing: normal !important;
-  font-style: normal !important;
-  overflow: visible !important;
-  padding: 3px 0;
+  margin-top: 0.5rem;
 }
 
 .footer-bottom {
   border-top: 1px solid var(--border-subtle);
-  padding-top: 1.6rem;
+  padding-top: 1.5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  gap: 1.1rem;
-  font-size: 0.88rem;
+  gap: 1rem;
+  font-size: 0.85rem;
 }
 
 @media (max-width: 768px) {
-  .front-hero-title { font-size: 2.6rem; }
+  .front-hero-title { font-size: 2.5rem; }
   .titlebar-container { flex-direction: column; align-items: flex-start; }
   .studio-launch-grid { grid-template-columns: 1fr; }
   .story-grid { grid-template-columns: 1fr; }

@@ -57,7 +57,7 @@ class AtelierRequestHandler(http.server.SimpleHTTPRequestHandler):
         elif path == "/app.js":
             self.send_file(os.path.join(STATIC_DIR, "app.js"), "application/javascript; charset=utf-8")
         elif path in ["/api/health", "/health"]:
-            self.send_json({"status": "HEALTHY", "engine": "Aegis Atelier v1.0.0", "craft": "तारों से नहीं, मोहब्बत से होती है।"})
+            self.send_json({"status": "HEALTHY", "engine": "Aegis Atelier v1.0.0", "craft": "Crafted with care, not wires."})
         else:
             # Fallback to default static file handler
             super().do_GET()

@@ -58,7 +58,7 @@ class UniversalService:
                 "2. **Execution Steps:** All calculations and structural adjustments have been executed cleanly in the background.\n"
                 "3. **Deliverable Ready:** Clean, verified, and free from artificial noise."
             ),
-            "craft_signature": "तारों से नहीं, मोहब्बत से होती है।",
+            "craft_signature": "Crafted with care, not wires.",
         }
 
         return structured_solution
