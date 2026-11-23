@@ -25,6 +25,7 @@ ROOT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 sys.path.insert(0, ROOT_DIR)
 
 from src.core.orchestrator import MasterOrchestrator
+from src.services.character_art_service import CharacterArtService
 from src.services.creator_service import CreatorService
 from src.services.design_service import DesignService
 from src.services.office_service import OfficeDataEngine
@@ -85,6 +86,8 @@ class AtelierRequestHandler(http.server.SimpleHTTPRequestHandler):
                 self.handle_creator_script(body_json)
             elif path == "/api/design/suite":
                 self.handle_design_suite(body_json)
+            elif path == "/api/character-art":
+                self.handle_character_art(body_json)
             elif path == "/api/code/orchestrate":
                 self.handle_code_orchestrate(body_json)
             elif path == "/api/universal/execute":
@@ -152,6 +155,13 @@ class AtelierRequestHandler(http.server.SimpleHTTPRequestHandler):
         """Generate color palettes, retouching recipes, and camera prompts."""
         theme = body.get("theme", "Artisan Studio")
         result = DesignService.generate_design_suite(theme)
+        self.send_json(result)
+
+    def handle_character_art(self, body: Dict[str, Any]) -> None:
+        """Generate 3D character concepts, wireframe lining, and Octane/Midjourney prompts."""
+        concept = body.get("concept", "Cybernetic Nomad")
+        style = body.get("style", "Cinematic 3D Realism")
+        result = CharacterArtService.generate_character_suite(concept, style)
         self.send_json(result)
 
     def handle_code_orchestrate(self, body: Dict[str, Any]) -> None:

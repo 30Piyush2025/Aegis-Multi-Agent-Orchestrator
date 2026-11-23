@@ -10,81 +10,225 @@
 <body>
 
   <!-- =========================================================================
-       Top Navigation Bar
+       Title Bar Navigation
        ========================================================================= -->
-  <nav class="top-nav">
-    <div class="nav-container">
-      <a href="#" class="brand-block">
+  <header class="titlebar">
+    <div class="titlebar-container">
+      
+      <!-- Brand Logo / Emblem -->
+      <div id="btnGoHome" class="brand-section" title="Go to Home / Overview">
         <div class="brand-emblem">A</div>
         <div class="brand-text">
           <h1>Aegis Atelier</h1>
           <span class="brand-motto">तारों से नहीं, मोहब्बत से होती है।</span>
         </div>
-      </a>
-      
-      <div class="nav-actions">
+      </div>
+
+      <!-- Title Bar Studio Selector & Theme Switcher -->
+      <nav class="titlebar-nav">
+        <label for="titlebarSelect" style="font-size: 0.84rem; color: var(--text-muted); font-weight: 500;">Navigate:</label>
+        <select id="titlebarSelect" class="titlebar-select">
+          <option value="home">🏠 Home / Overview</option>
+          <option value="office">📊 Office & Data Studio</option>
+          <option value="character">🎭 Character Art & 3D Lining</option>
+          <option value="creator">🎬 Creator & Media Studio</option>
+          <option value="student">🎓 Student & Academic Studio</option>
+          <option value="design">🎨 Photo & Visual Color</option>
+          <option value="code">💻 Code & Software Studio</option>
+          <option value="universal">✍️ Universal Freeform Canvas</option>
+        </select>
+
         <button id="themeToggleBtn" class="theme-toggle-btn" title="Toggle Theme">
           <span id="themeIcon">🌙</span>
           <span id="themeLabel">Velvet Obsidian</span>
         </button>
-      </div>
+      </nav>
+
     </div>
-  </nav>
+  </header>
 
   <!-- =========================================================================
-       Main Workspace
+       Main Multi-Page View Container
        ========================================================================= -->
-  <main class="main-container">
-    
-    <!-- Hero Introduction -->
-    <header class="hero-block">
-      <h2 class="hero-tagline">Clean Work. Zero Clutter. Made with Care.</h2>
-      <p class="hero-sub">
-        An autonomous, human-centric studio designed to handle spreadsheets, academic research, 
-        creator media, photography palettes, and software engineering — without robotic noise or confusing processes.
-      </p>
-    </header>
+  <main class="main-content">
 
-    <!-- Service Switcher Tabs -->
-    <div class="service-tabs-wrapper">
-      <div class="service-tabs">
-        <button class="tab-btn active" data-tab="office">
-          <span>📊</span> Office & Data
-        </button>
-        <button class="tab-btn" data-tab="student">
-          <span>🎓</span> Student & Academic
-        </button>
-        <button class="tab-btn" data-tab="creator">
-          <span>🎬</span> Creator & Media
-        </button>
-        <button class="tab-btn" data-tab="design">
-          <span>🎨</span> Photo & Design
-        </button>
-        <button class="tab-btn" data-tab="code">
-          <span>💻</span> Code & Software
-        </button>
-        <button class="tab-btn" data-tab="universal">
-          <span>✍️</span> Universal Canvas
-        </button>
-      </div>
-    </div>
-
-    <!-- Workstation Container -->
-    <div class="workstation-grid">
-
-      <!-- =====================================================================
-           Tab 1: Office & Data Studio (Excel / CSV)
-           ===================================================================== -->
-      <section id="panel-office" class="card tab-panel">
-        <div class="card-header">
-          <div>
-            <h3 class="card-title">Spreadsheet & Data Clean Studio</h3>
-            <p class="card-desc">Modify Excel sheets and CSVs using simple natural words (Hindi or English). Delete columns, compute totals, deduplicate, or filter rows without formulas.</p>
+    <!-- =======================================================================
+         PAGE 1: Front Page (Home / Overview Storytelling Canvas)
+         ======================================================================= -->
+    <article id="page-home" class="page-view active">
+      
+      <!-- Front Page Hero with Live Interactive 3D Lining Background -->
+      <div class="front-hero">
+        <canvas id="canvas3D" class="canvas-3d-background"></canvas>
+        <div class="front-hero-content">
+          <span class="hero-quote-badge">“तारों से नहीं, मोहब्बत से होती है।”</span>
+          <h2 class="front-hero-title">A Bespoke Multi-Domain Studio. Crafted with Empathy & Precision.</h2>
+          <p class="front-hero-desc">
+            An intentional software atelier uniting spreadsheet data processing, 3D character wireframes, 
+            creator storytelling, academic conceptualization, and self-healing software orchestration — 
+            completely free of artificial cliches, neon clutter, or robotic noise.
+          </p>
+          <div class="front-hero-actions">
+            <button class="btn-primary" onclick="navigateToPage('office')">
+              <span>📊</span> Launch Office Studio
+            </button>
+            <button class="btn-secondary" onclick="navigateToPage('character')">
+              <span>🎭</span> Explore 3D Character Art
+            </button>
           </div>
-          <span class="badge green">Zero Human Error</span>
         </div>
+      </div>
 
-        <!-- File Upload Dropzone -->
+      <!-- 4-Pillar Deep Explainer Section -->
+      <section style="margin-bottom: 3.5rem;">
+        <h3 class="section-headline">The Philosophy of Aegis Atelier</h3>
+        <p class="section-sub">A clear, transparent breakdown of how this studio operates.</p>
+
+        <div class="story-grid">
+          <!-- Pillar 1: क्या हो रहा है -->
+          <div class="story-card">
+            <div class="story-card-icon">⚡</div>
+            <h4 class="story-card-title">क्या हो रहा है? (What is happening)</h4>
+            <p class="story-card-desc">
+              बैकएंड में एक पूर्ण बहु-स्तरीय ऑर्केस्ट्रेशन इंजन सक्रिय है। जब आप एक्सेल शीट देते हैं, तो वह बिना किसी फॉर्मूला त्रुटि के कॉलम हटाता है, डेटा जोड़ता है और साफ़ करता है। 
+              जब आप 3D आर्ट या वीडियो स्क्रिप्ट मांगते हैं, तो वह पेशेवर टाइमिंग और टोपोलॉजी के साथ तैयार की जाती है।
+            </p>
+          </div>
+
+          <!-- Pillar 2: क्या नहीं हो रहा है -->
+          <div class="story-card">
+            <div class="story-card-icon">🛡️</div>
+            <h4 class="story-card-title">क्या नहीं हो रहा है? (What is NOT happening)</h4>
+            <p class="story-card-desc">
+              यहाँ कोई भड़कीला नियॉन रोबोटिक दिखावा नहीं है। कोई ऐसी भ्रामक तकनीकी भाषा (Hallucinations) नहीं है जो यूज़र को उलझा दे। 
+              यूज़र को किसी एक तयशुदा शब्द पर मजबूर नहीं किया जाता—आप अपने मनचाहे शब्दों (हिंदी या अंग्रेज़ी) में काम करवा सकते हैं।
+            </p>
+          </div>
+
+          <!-- Pillar 3: कैसे काम करता है -->
+          <div class="story-card">
+            <div class="story-card-icon">⚙️</div>
+            <h4 class="story-card-title">कैसे काम करता है? (How it works)</h4>
+            <p class="story-card-desc">
+              1. <strong>प्राकृतिक समझ:</strong> आपकी इच्छा को सीधे ग्रहण करता है।<br>
+              2. <strong>डोमेन स्पेशलिस्ट लीड्स:</strong> रिसर्च, इंजीनियरिंग और क्यूए लीड्स काम को विभाजित करते हैं।<br>
+              3. <strong>ज़ीरो-डिपेंडेंसी प्रोसेसिंग:</strong> डेटा को सीधे बाइनरी स्तर पर संभाला जाता है।<br>
+              4. <strong>शांत डिलीवरी:</strong> यूज़र को केवल साफ़ परिणाम मिलता है।
+            </p>
+          </div>
+
+          <!-- Pillar 4: Website कैसी होनी चाहिए -->
+          <div class="story-card">
+            <div class="story-card-icon">🌿</div>
+            <h4 class="story-card-title">Website कैसी होनी चाहिए? (True Craft)</h4>
+            <p class="story-card-desc">
+              वेबसाइट केवल कोड का ढेर नहीं होती—वह एक अहसास होती है। वॉर्म पार्चमेंट पैलेट, मानवीय सीरिफ़ फ़ॉन्ट्स, ऑर्गेनिक राउंडेड कोने और एक क्लिक में उपलब्ध सेवाएँ यह दर्शाती हैं कि 
+              <em>“तारों से नहीं, मोहब्बत से होती है।”</em>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Direct Studio Launch Cards -->
+      <section>
+        <h3 class="section-headline">Explore Dedicated Studios</h3>
+        <p class="section-sub">Choose any domain to open its dedicated studio view.</p>
+
+        <div class="studio-launch-grid">
+          
+          <!-- Studio Card 1 -->
+          <div class="studio-card" onclick="navigateToPage('office')">
+            <div>
+              <div class="studio-card-head">
+                <span class="studio-card-icon">📊</span>
+                <h3>Office & Data Studio</h3>
+              </div>
+              <p>Upload Excel (.xlsx) or CSV files. Say "Email column delete karo" or "Sort by salary"—instant, error-free spreadsheet transformation.</p>
+            </div>
+            <div class="studio-open-link">Open Studio &rarr;</div>
+          </div>
+
+          <!-- Studio Card 2 -->
+          <div class="studio-card" onclick="navigateToPage('character')">
+            <div>
+              <div class="studio-card-head">
+                <span class="studio-card-icon">🎭</span>
+                <h3>Character Art & 3D Lining</h3>
+              </div>
+              <p>Real-time 3D wireframe lining, quad-dominant edge loop topologies, character concept sheets, and Octane/Midjourney prompts.</p>
+            </div>
+            <div class="studio-open-link">Open Studio &rarr;</div>
+          </div>
+
+          <!-- Studio Card 3 -->
+          <div class="studio-card" onclick="navigateToPage('creator')">
+            <div>
+              <div class="studio-card-head">
+                <span class="studio-card-icon">🎬</span>
+                <h3>Creator & Media Studio</h3>
+              </div>
+              <p>Craft high-retention YouTube & Reel scripts, viral curiosity hooks, storyboard B-roll cues, and high-CTR thumbnail briefs.</p>
+            </div>
+            <div class="studio-open-link">Open Studio &rarr;</div>
+          </div>
+
+          <!-- Studio Card 4 -->
+          <div class="studio-card" onclick="navigateToPage('student')">
+            <div>
+              <div class="studio-card-head">
+                <span class="studio-card-icon">🎓</span>
+                <h3>Student & Academic Studio</h3>
+              </div>
+              <p>Deconstruct complex science and math theories using intuitive real-world analogies, step-by-step logic, and flashcards.</p>
+            </div>
+            <div class="studio-open-link">Open Studio &rarr;</div>
+          </div>
+
+          <!-- Studio Card 5 -->
+          <div class="studio-card" onclick="navigateToPage('design')">
+            <div>
+              <div class="studio-card-head">
+                <span class="studio-card-icon">🎨</span>
+                <h3>Photo & Visual Color Studio</h3>
+              </div>
+              <p>Harmonious color palettes with live CSS variables, professional Lightroom retouching recipes, and Leica camera directives.</p>
+            </div>
+            <div class="studio-open-link">Open Studio &rarr;</div>
+          </div>
+
+          <!-- Studio Card 6 -->
+          <div class="studio-card" onclick="navigateToPage('code')">
+            <div>
+              <div class="studio-card-head">
+                <span class="studio-card-icon">💻</span>
+                <h3>Code & Software Studio</h3>
+              </div>
+              <p>Aegis Hierarchical Multi-Agent Engine: Master Orchestrator, Domain Leads, and Atomic Workers craft full-stack verified code.</p>
+            </div>
+            <div class="studio-open-link">Open Studio &rarr;</div>
+          </div>
+
+        </div>
+      </section>
+
+    </article>
+
+    <!-- =======================================================================
+         PAGE 2: Office & Data Studio (Spreadsheet, CSV/XLSX)
+         ======================================================================= -->
+    <article id="page-office" class="page-view">
+      <div class="page-top-bar">
+        <div class="page-title-group">
+          <h2>📊 Office & Data Studio</h2>
+          <p>Spreadsheet transformation without broken formulas. Modify columns, compute totals, or clean rows.</p>
+        </div>
+        <div class="page-controls">
+          <button class="btn-close-page" onclick="navigateToPage('home')">✕ Close / Back to Overview</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <!-- File Dropzone -->
         <div id="officeDropzone" class="file-dropzone">
           <div class="file-dropzone-icon">📁</div>
           <p>Drag & drop your <strong>.xlsx</strong> or <strong>.csv</strong> file here, or click to browse</p>
@@ -92,7 +236,7 @@
         </div>
 
         <div style="margin-bottom: 1.2rem;">
-          <label class="input-label" for="officeDataInput">Or Paste Table Data (CSV / TSV / Rows):</label>
+          <label class="input-label" for="officeDataInput">Or Paste Table Rows (CSV / TSV):</label>
           <textarea id="officeDataInput" class="text-area" rows="4" placeholder="Name, Role, Department, Salary, Email
 Aarav Sharma, Developer, Engineering, 85000, aarav@company.com
 Priya Patel, Designer, UI/UX, 75000, priya@company.com
@@ -101,56 +245,82 @@ Priya Patel, Designer, UI/UX, 75000, priya@company.com"></textarea>
         </div>
 
         <div style="margin-bottom: 1.4rem;">
-          <label class="input-label" for="officeInstructionInput">What changes should be made to this sheet?</label>
+          <label class="input-label" for="officeInstructionInput">What should be changed? (Hindi, Hinglish, or English):</label>
           <input type="text" id="officeInstructionInput" class="text-area" style="min-height: auto; height: 48px;" placeholder="e.g. Email column delete karo, duplicate rows hata do, aur Salary sort karo">
         </div>
 
         <button id="btnProcessOffice" class="btn-primary">
           <span>✨</span> Process & Refine Table
         </button>
-      </section>
+      </div>
+    </article>
 
-      <!-- =====================================================================
-           Tab 2: Student & Academic Studio
-           ===================================================================== -->
-      <section id="panel-student" class="card tab-panel" style="display: none;">
-        <div class="card-header">
-          <div>
-            <h3 class="card-title">Academic & Conceptual Study Studio</h3>
-            <p class="card-desc">Deconstruct complex physics, mathematics, engineering, or theory topics into crystal-clear mental models with real-world analogies.</p>
-          </div>
-          <span class="badge">Intuitive Learning</span>
+    <!-- =======================================================================
+         PAGE 3: Character Art & 3D Lining Studio
+         ======================================================================= -->
+    <article id="page-character" class="page-view">
+      <div class="page-top-bar">
+        <div class="page-title-group">
+          <h2>🎭 Character Art & 3D Lining Studio</h2>
+          <p>Interactive 3D wireframe topology, contour linings, character concepts, and Octane Render prompts.</p>
         </div>
+        <div class="page-controls">
+          <button class="btn-close-page" onclick="navigateToPage('home')">✕ Close / Back to Overview</button>
+        </div>
+      </div>
 
+      <!-- Interactive 3D Wireframe Lining Viewport -->
+      <div class="lining-viewport-container">
+        <canvas id="canvasCharacter3D"></canvas>
+        <div class="lining-overlay-controls">
+          <span><strong>Interactive 3D Lining:</strong> Drag mouse/touch to bend wireframe mesh</span>
+          <span style="font-family: var(--font-mono); color: var(--accent);">Contour Lines: 60 FPS Real-time</span>
+        </div>
+      </div>
+
+      <div class="card">
         <div style="margin-bottom: 1.2rem;">
-          <label class="input-label" for="studentTopicInput">What concept or problem would you like to master?</label>
-          <input type="text" id="studentTopicInput" class="text-area" style="min-height: auto; height: 48px;" placeholder="e.g. Fourier Transform, Bayes Theorem, TCP/IP Handshake, Backpropagation">
-        </div>
-
-        <button id="btnProcessStudent" class="btn-primary">
-          <span>📖</span> Generate Concept Breakdown
-        </button>
-      </section>
-
-      <!-- =====================================================================
-           Tab 3: Creator & Media Studio
-           ===================================================================== -->
-      <section id="panel-creator" class="card tab-panel" style="display: none;">
-        <div class="card-header">
-          <div>
-            <h3 class="card-title">Creator & Video Production Studio</h3>
-            <p class="card-desc">Author high-retention video scripts, viral curiosity hooks, storyboard pacing, and thumbnail briefs for YouTube and Reels.</p>
-          </div>
-          <span class="badge">High Retention</span>
-        </div>
-
-        <div style="margin-bottom: 1.2rem;">
-          <label class="input-label" for="creatorTopicInput">What is your video or content topic?</label>
-          <input type="text" id="creatorTopicInput" class="text-area" style="min-height: auto; height: 48px;" placeholder="e.g. Why I stopped using conventional smartphones in 2026">
+          <label class="input-label" for="charConceptInput">Character Concept, Name, or Visual Idea:</label>
+          <input type="text" id="charConceptInput" class="text-area" style="min-height: auto; height: 48px;" placeholder="e.g. Cybernetic Artisan Weaver with brass ocular lens and raw linen robes">
         </div>
 
         <div style="margin-bottom: 1.4rem;">
-          <label class="input-label">Content Format:</label>
+          <label class="input-label">Visual Style:</label>
+          <select id="charStyleSelect" class="titlebar-select" style="width: 100%; max-width: 320px;">
+            <option value="Cinematic 3D Realism">Cinematic 3D Realism (Octane/ZBrush)</option>
+            <option value="Tactile Kinfolk Editorial">Tactile Kinfolk Editorial (Leica 85mm)</option>
+            <option value="Stylized Anime Wireframe">Stylized Anime / Mech Wireframe</option>
+          </select>
+        </div>
+
+        <button id="btnProcessCharacter" class="btn-primary">
+          <span>🎨</span> Generate Character Suite & 3D Lining
+        </button>
+      </div>
+    </article>
+
+    <!-- =======================================================================
+         PAGE 4: Creator & Media Studio
+         ======================================================================= -->
+    <article id="page-creator" class="page-view">
+      <div class="page-top-bar">
+        <div class="page-title-group">
+          <h2>🎬 Creator & Media Studio</h2>
+          <p>High-retention video scripts, viral curiosity hooks, second-by-second storyboard pacing, and thumbnail briefs.</p>
+        </div>
+        <div class="page-controls">
+          <button class="btn-close-page" onclick="navigateToPage('home')">✕ Close / Back to Overview</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <div style="margin-bottom: 1.2rem;">
+          <label class="input-label" for="creatorTopicInput">What is your video topic or creative concept?</label>
+          <input type="text" id="creatorTopicInput" class="text-area" style="min-height: auto; height: 48px;" placeholder="e.g. Why minimalist setups help you think with clarity in 2026">
+        </div>
+
+        <div style="margin-bottom: 1.4rem;">
+          <label class="input-label">Format:</label>
           <div style="display: flex; gap: 0.8rem;">
             <button class="btn-secondary active-pill" id="formatYT" type="button">YouTube Longform (8-12 min)</button>
             <button class="btn-secondary" id="formatShort" type="button">Shorts / Reels (60s)</button>
@@ -160,65 +330,103 @@ Priya Patel, Designer, UI/UX, 75000, priya@company.com"></textarea>
         <button id="btnProcessCreator" class="btn-primary">
           <span>🎬</span> Build Production Script & Hooks
         </button>
-      </section>
+      </div>
+    </article>
 
-      <!-- =====================================================================
-           Tab 4: Photo & Visual Design Studio
-           ===================================================================== -->
-      <section id="panel-design" class="card tab-panel" style="display: none;">
-        <div class="card-header">
-          <div>
-            <h3 class="card-title">Photo Retouching & Visual Color Studio</h3>
-            <p class="card-desc">Bespoke color palettes with live CSS variables, professional Lightroom retouching recipes, and Midjourney cinematic prompts.</p>
-          </div>
-          <span class="badge">Artisan Aesthetics</span>
+    <!-- =======================================================================
+         PAGE 5: Student & Academic Studio
+         ======================================================================= -->
+    <article id="page-student" class="page-view">
+      <div class="page-top-bar">
+        <div class="page-title-group">
+          <h2>🎓 Student & Academic Studio</h2>
+          <p>Deconstruct complex physics, math, and engineering theories into intuitive mental models with analogies.</p>
+        </div>
+        <div class="page-controls">
+          <button class="btn-close-page" onclick="navigateToPage('home')">✕ Close / Back to Overview</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <div style="margin-bottom: 1.4rem;">
+          <label class="input-label" for="studentTopicInput">Concept or Problem to Master:</label>
+          <input type="text" id="studentTopicInput" class="text-area" style="min-height: auto; height: 48px;" placeholder="e.g. Fourier Transform, Bayes Theorem, Gradient Descent, Quantum Superposition">
         </div>
 
-        <div style="margin-bottom: 1.2rem;">
-          <label class="input-label" for="designThemeInput">Visual Theme, Mood or Photograph Subject:</label>
+        <button id="btnProcessStudent" class="btn-primary">
+          <span>📖</span> Generate Concept Breakdown & Flashcards
+        </button>
+      </div>
+    </article>
+
+    <!-- =======================================================================
+         PAGE 6: Photo & Visual Color Studio
+         ======================================================================= -->
+    <article id="page-design" class="page-view">
+      <div class="page-top-bar">
+        <div class="page-title-group">
+          <h2>🎨 Photo & Visual Color Studio</h2>
+          <p>Harmonious color palettes with live CSS variables, Lightroom retouching recipes, and Leica camera prompts.</p>
+        </div>
+        <div class="page-controls">
+          <button class="btn-close-page" onclick="navigateToPage('home')">✕ Close / Back to Overview</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <div style="margin-bottom: 1.4rem;">
+          <label class="input-label" for="designThemeInput">Visual Theme, Mood or Photography Subject:</label>
           <input type="text" id="designThemeInput" class="text-area" style="min-height: auto; height: 48px;" placeholder="e.g. Golden hour artisan ceramic workshop with natural linen textures">
         </div>
 
         <button id="btnProcessDesign" class="btn-primary">
-          <span>🎨</span> Generate Palettes & Camera Directives
+          <span>🎨</span> Generate Color Palettes & Lens Recipes
         </button>
-      </section>
+      </div>
+    </article>
 
-      <!-- =====================================================================
-           Tab 5: Code & Software Studio (Aegis Orchestrator)
-           ===================================================================== -->
-      <section id="panel-code" class="card tab-panel" style="display: none;">
-        <div class="card-header">
-          <div>
-            <h3 class="card-title">Software Engineering & Architecture Studio</h3>
-            <p class="card-desc">Aegis Hierarchical Orchestration: Master Orchestrator, Domain Leads, and Atomic Workers craft full-stack verified code with automated self-healing.</p>
-          </div>
-          <span class="badge green">27/27 Tests Verified</span>
+    <!-- =======================================================================
+         PAGE 7: Code & Software Studio
+         ======================================================================= -->
+    <article id="page-code" class="page-view">
+      <div class="page-top-bar">
+        <div class="page-title-group">
+          <h2>💻 Code & Software Studio</h2>
+          <p>Aegis 3-Tier Multi-Agent Engine: Master Orchestrator, Domain Leads, and Atomic Workers with automated self-healing.</p>
         </div>
+        <div class="page-controls">
+          <button class="btn-close-page" onclick="navigateToPage('home')">✕ Close / Back to Overview</button>
+        </div>
+      </div>
 
-        <div style="margin-bottom: 1.2rem;">
-          <label class="input-label" for="codeObjectiveInput">Software Objective or System Requirement:</label>
+      <div class="card">
+        <div style="margin-bottom: 1.4rem;">
+          <label class="input-label" for="codeObjectiveInput">Software Objective or Architectural Goal:</label>
           <textarea id="codeObjectiveInput" class="text-area" rows="3" placeholder="e.g. Build an autonomous IoT telemetry ingestion pipeline with FastAPI, SQLite repository, and Streamlit monitoring interface."></textarea>
         </div>
 
         <button id="btnProcessCode" class="btn-primary">
           <span>⚙️</span> Orchestrate Architecture & Codebase
         </button>
-      </section>
+      </div>
+    </article>
 
-      <!-- =====================================================================
-           Tab 6: Universal Canvas
-           ===================================================================== -->
-      <section id="panel-universal" class="card tab-panel" style="display: none;">
-        <div class="card-header">
-          <div>
-            <h3 class="card-title">Universal Freeform Canvas</h3>
-            <p class="card-desc">Write anything you need in your own natural words without preset categories or forced constraints.</p>
-          </div>
-          <span class="badge">Unrestricted</span>
+    <!-- =======================================================================
+         PAGE 8: Universal Freeform Canvas
+         ======================================================================= -->
+    <article id="page-universal" class="page-view">
+      <div class="page-top-bar">
+        <div class="page-title-group">
+          <h2>✍️ Universal Freeform Canvas</h2>
+          <p>Write anything you need in your own natural words without preset categories or forced constraints.</p>
         </div>
+        <div class="page-controls">
+          <button class="btn-close-page" onclick="navigateToPage('home')">✕ Close / Back to Overview</button>
+        </div>
+      </div>
 
-        <div style="margin-bottom: 1.2rem;">
+      <div class="card">
+        <div style="margin-bottom: 1.4rem;">
           <label class="input-label" for="universalInput">Your Custom Request (Hindi, Hinglish, or English):</label>
           <textarea id="universalInput" class="text-area" rows="4" placeholder="आप अपने किसी भी काम को अपने शब्दों में यहाँ लिखें... चाहे ऑफिस का काम हो, वीडियो एडिटिंग हो, या कोई डॉक्यूमेंट।"></textarea>
         </div>
@@ -226,9 +434,8 @@ Priya Patel, Designer, UI/UX, 75000, priya@company.com"></textarea>
         <button id="btnProcessUniversal" class="btn-primary">
           <span>🕊️</span> Complete Task with Care
         </button>
-      </section>
-
-    </div>
+      </div>
+    </article>
 
     <!-- =========================================================================
          Quiet Progress Indicator (Calm & Non-Intrusive)
@@ -256,7 +463,7 @@ Priya Patel, Designer, UI/UX, 75000, priya@company.com"></textarea>
           <p id="outputSubheading" style="color: var(--text-muted); font-size: 0.88rem;"></p>
         </div>
         <div class="output-actions-group" id="outputActionButtons">
-          <!-- Dynamically populated buttons (Download CSV, Download XLSX, Copy) -->
+          <!-- Dynamically populated buttons -->
         </div>
       </div>
 
@@ -283,7 +490,7 @@ Priya Patel, Designer, UI/UX, 75000, priya@company.com"></textarea>
        ========================================================================= -->
   <footer class="atelier-footer">
     <p class="footer-quote">“तारों से नहीं, मोहब्बत से होती है।”</p>
-    <p>Aegis Atelier &copy; 2026. Human-crafted with intentionality and precision.</p>
+    <p>Aegis Atelier &copy; 2026. Human-crafted with intentionality, multi-page clarity, and tactile precision.</p>
   </footer>
 
   <script src="app.js"></script>

@@ -2,6 +2,7 @@
 Aegis Multi-Domain Services Package
 """
 
+from .character_art_service import CharacterArtService
 from .creator_service import CreatorService
 from .design_service import DesignService
 from .office_service import OfficeDataEngine
@@ -13,5 +14,6 @@ __all__ = [
     "StudentService",
     "CreatorService",
     "DesignService",
+    "CharacterArtService",
     "UniversalService",
 ]
